@@ -9,6 +9,9 @@ import { EarthCanvas } from './canvas'
 import { SectionWrapper } from './hoc'
 import { slideIn } from '../utils/motion'
 
+// gsifqZIa5fnyTyZSm
+// template_uyye3cf
+// service_pv94pma 
 
 const Contact = () => {
 const formRef= useRef();
@@ -23,11 +26,41 @@ const [loading,setLoading] = useState(false)
 
 
 const handleChange = (e) => {
-
+  const { name, value } = e.target;
+  setForm({...form, [name]: value})
 }
 
 const handleSubmit = (e) => {
+  e.preventDefault();
+  setLoading(true);
 
+  emailjs.send(
+    'service_pv94pma',
+    'template_uyye3cf',
+    {
+      from_name: form.name,
+      to_name: 'Mauro Lizarraga',
+      from_email: form.email,
+      to_email:'lizarragamauroalejandro@gmail.com',
+      message: form.message,
+    },
+    'gsifqZIa5fnyTyZSm'
+    )
+    .then(() => {
+      setLoading(false);
+      alert('¡Gracias! estare en contacto lo mas pronto posible.');
+
+      setForm({
+        name:'',
+        email:'',
+        message:'',
+      })
+    }, (error) => {
+      setLoading(false);
+      console.log(error);
+
+      alert('Ocurrio un error inesperado')
+    })
 }
 
   return (
