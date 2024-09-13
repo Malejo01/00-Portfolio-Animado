@@ -28,34 +28,38 @@ import {
   export const navLinks = [
     {
       id: "about",
-      title: "About",
+      title: "Acerca de mi",
     },
     {
       id: "work",
-      title: "Work",
+      title: "Proyectos",
     },
     {
       id: "contact",
-      title: "Contact",
+      title: "Contactame",
     },
   ];
   
   const services = [
     {
       title: "Web Developer",
-      icon: web,
+      icon: javascript,
     },
     {
-      title: "React Native Developer",
-      icon: mobile,
+      title: "Front End",
+      icon: css,
     },
     {
-      title: "Backend Developer",
-      icon: backend,
+      title: "React Developer",
+      icon: reactjs,
     },
     {
-      title: "Content Creator",
+      title: "Math Teacher",
       icon: creator,
+    },
+    {
+      title: "Bachelor of Education",
+      icon: carrent,
     },
   ];
   
@@ -103,14 +107,6 @@ import {
     {
       name: "git",
       icon: git,
-    },
-    {
-      name: "figma",
-      icon: figma,
-    },
-    {
-      name: "docker",
-      icon: docker,
     },
   ];
   
