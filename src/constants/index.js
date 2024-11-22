@@ -18,6 +18,7 @@ import {
     jobit,
     tripguide,
     threejs,
+    logo,
   } from "../assets";
   
   export const navLinks = [
@@ -47,14 +48,6 @@ import {
     {
       title: "React Developer",
       icon: reactjs,
-    },
-    {
-      title: "Math Teacher",
-      icon: creator,
-    },
-    {
-      title: "Bachelor of Education",
-      icon: carrent,
     },
   ];
   
