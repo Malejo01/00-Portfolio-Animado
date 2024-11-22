@@ -1,8 +1,5 @@
 import {
-    mobile,
-    backend,
     creator,
-    web,
     javascript,
     typescript,
     html,
@@ -13,8 +10,6 @@ import {
     nodejs,
     mongodb,
     git,
-    figma,
-    docker,
     meta,
     starbucks,
     tesla,
@@ -194,17 +189,17 @@ import {
   
   const projects = [
     {
-      name: "Car Rent",
+      name: "El Ebrio Fino",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        "Pagina web en donde podes ver, buscar y filtrar recetas de tragos segun los ingredientes que tengas a mano.",
       tags: [
         {
           name: "react",
           color: "blue-text-gradient",
         },
         {
-          name: "mongodb",
-          color: "green-text-gradient",
+          name: "Javascript",
+          color: "yellow-text-gradient",
         },
         {
           name: "tailwind",
@@ -212,12 +207,13 @@ import {
         },
       ],
       image: carrent,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/Malejo01/BuscadorBebidas.git",
+      proyect_link:"https://elebriofino.netlify.app",
     },
     {
-      name: "Job IT",
+      name: "Cotizador de Cryptomonedas",
       description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        "Aplicacion Web en donde puedes conocer a tiempo real cuales son los valores de las cryptomonedas mas utilizadas en la moneda de tu pais",
       tags: [
         {
           name: "react",
@@ -233,20 +229,21 @@ import {
         },
       ],
       image: jobit,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/Malejo01/crypto-react.git",
+      proyect_link:"https://cotizador-crypto-react-vite.netlify.app"
     },
     {
-      name: "Trip Guide",
+      name: "Citas veterinaria",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        "Un proyecto en el cual puedes agendar citas en una veterinaria, especificando los datos y sintomas de tu mascota. Ademas permite guardar y editar los detalles",
       tags: [
         {
-          name: "nextjs",
+          name: "react",
           color: "blue-text-gradient",
         },
         {
-          name: "supabase",
-          color: "green-text-gradient",
+          name: "javascript",
+          color: "yellow-text-gradient",
         },
         {
           name: "css",
@@ -254,7 +251,8 @@ import {
         },
       ],
       image: tripguide,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/Malejo01/citas-react.git",
+      proyect_link:"https://agendatucita-veterinaria-react-vite.netlify.app"
     },
   ];
   
