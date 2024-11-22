@@ -1,10 +1,29 @@
 import {motion} from 'framer-motion'
-
+import { useState, useEffect } from "react";
 import {styles} from '../styles'
 import { ComputersCanvas } from './canvas'
 
 
 const Hero = () => {
+  const [isMobile,SetIsMobile] = useState(false)
+
+  useEffect(() => {
+    //Añadimos un eventlistener para los cambios en el tamaño de la pantalla
+   const mediaQuery = window.matchMedia('(max-width:500px)');
+  // Inicializamos la variable isMobile
+    SetIsMobile(mediaQuery.matches);
+    // Definimos una funcion callback para ver cambios en el mediaQuery
+    const handleMediaQueryChange = (event) => {
+      SetIsMobile(event.matches)
+    }
+    //añadimos la funcion callback como listener para cambios en el mediaQuery
+    mediaQuery.addEventListener('change', handleMediaQueryChange)
+    // Removemos el listener una vez que el componente ya a sido montado
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaQueryChange)
+    }
+  },[])
+
   return (
     <section className="relative w-full h-screen mx-auto" >
       <div className={`${styles.paddingX} absolute inset-0 top-[100px] max-w-7xl mx-auto flex flex-row items-start gap-5`}>
@@ -19,7 +38,7 @@ const Hero = () => {
         </div>
 
       </div>
-        <ComputersCanvas/>
+        {!isMobile && <ComputersCanvas/>}
 
       <div className='absolute xs:bottom-10 bottom -32 w-full flex justify-center items-center'>
         <a href='#about'>
