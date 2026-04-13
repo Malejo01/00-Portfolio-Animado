@@ -491,31 +491,18 @@ const DetailedComputer = ({ onFirstRender }) => {
 };
 
 const ComputerCanvas = () => {
-  const [isMobile, setIsMobile] = useState(false);
   const [hasWebGL, setHasWebGL] = useState(true);
   const [detailedRendered, setDetailedRendered] = useState(false);
   const [forceLightweight, setForceLightweight] = useState(false);
 
   useEffect(() => {
-    const mobileQuery = window.matchMedia("(max-width:768px)");
-
-    const updateMode = () => {
-      setIsMobile(mobileQuery.matches);
-      setHasWebGL(hasWebGLSupport());
-      setDetailedRendered(false);
-      setForceLightweight(false);
-    };
-
-    updateMode();
-    mobileQuery.addEventListener("change", updateMode);
-
-    return () => {
-      mobileQuery.removeEventListener("change", updateMode);
-    };
+    setHasWebGL(hasWebGLSupport());
+    setDetailedRendered(false);
+    setForceLightweight(false);
   }, []);
 
   useEffect(() => {
-    if (isMobile || !hasWebGL || detailedRendered || forceLightweight) return;
+    if (!hasWebGL || detailedRendered || forceLightweight) return;
 
     const timer = window.setTimeout(() => {
       setForceLightweight(true);
@@ -524,9 +511,9 @@ const ComputerCanvas = () => {
     return () => {
       window.clearTimeout(timer);
     };
-  }, [isMobile, hasWebGL, detailedRendered, forceLightweight]);
+  }, [hasWebGL, detailedRendered, forceLightweight]);
 
-  if (isMobile || !hasWebGL) {
+  if (!hasWebGL) {
     return null;
   }
 
