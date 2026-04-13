@@ -1,7 +1,13 @@
 import {
-    creator,
-    javascript,
+  creator,
+  web,
+  backend,
+  javascript,
     typescript,
+    angular,
+    dotnet,
+    csharp,
+    postgresql,
     html,
     css,
     reactjs,
@@ -38,16 +44,19 @@ import {
   
   const services = [
     {
-      title: "Web Developer",
-      icon: javascript,
+      title: "Frontend Architecture",
+      description: "Diseño interfaces escalables, sistemas de componentes y experiencias de usuario mantenibles para productos web de alto impacto.",
+      icon: web,
     },
     {
-      title: "Front End",
-      icon: css,
+      title: "Logic & Backend",
+      description: "Construyo APIs RESTful y capas de negocio con .NET y C#, priorizando consistencia, claridad técnica y evolución sostenible.",
+      icon: backend,
     },
     {
-      title: "React Developer",
-      icon: reactjs,
+      title: "AI-Assisted Development",
+      description: "Integro herramientas de IA al flujo de desarrollo para acelerar delivery, elevar productividad y mejorar la calidad del código.",
+      icon: creator,
     },
   ];
   
@@ -67,6 +76,22 @@ import {
     {
       name: "TypeScript",
       icon: typescript,
+    },
+    {
+      name: "Angular",
+      icon: angular,
+    },
+    {
+      name: ".NET Core",
+      icon: dotnet,
+    },
+    {
+      name: "C#",
+      icon: csharp,
+    },
+    {
+      name: "PostgreSQL",
+      icon: postgresql,
     },
     {
       name: "React JS",

@@ -8,13 +8,17 @@ import menu from "./menu.svg";
 import close from "./close.svg";
 
 import css from "./tech/css.png";
+import csharp from "./tech/csharp.svg";
 import docker from "./tech/docker.png";
+import dotnet from "./tech/dotnet.svg";
 import figma from "./tech/figma.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
+import angular from "./tech/angular.svg";
 import javascript from "./tech/javascript.png";
 import mongodb from "./tech/mongodb.png";
 import nodejs from "./tech/nodejs.png";
+import postgresql from "./tech/postgresql.svg";
 import reactjs from "./tech/reactjs.png";
 import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
@@ -39,14 +43,18 @@ export {
   github,
   menu,
   close,
+  angular,
   css,
+  csharp,
   docker,
+  dotnet,
   figma,
   git,
   html,
   javascript,
   mongodb,
   nodejs,
+  postgresql,
   reactjs,
   redux,
   tailwind,

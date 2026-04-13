@@ -8,7 +8,7 @@ import {fadeIn, textVariant} from '../utils/motion';
 import { SectionWrapper } from './hoc';
 
 
-const ServiceCard = ({index,title,icon}) => {
+const ServiceCard = ({index,title,description,icon}) => {
   return (
     <Tilt className= "xs:w-[250px] w-full" >
       <motion.div
@@ -26,6 +26,9 @@ const ServiceCard = ({index,title,icon}) => {
           <img src={icon} alt={title}
             className='w-16 h-16 object-contain'/>
           <h3 className='text-white text- [20px] font-bold text-center'>{title}</h3>
+          <p className='mt-3 text-secondary text-[14px] leading-6 text-center'>
+            {description}
+          </p>
         </div>
     </motion.div>
     </Tilt>
@@ -44,12 +47,12 @@ const About = () => {
     variants={fadeIn("","", 0.1,1)}
     className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
     >
-    ¡Hola! Soy Lizarraga Mauro, un apasionado desarrollador web de 32 años. 
-    Mi fascinación por las tecnologías me ha llevado a especializarme en lenguajes y herramientas como React,
-    Node.js, JavaScript, HTML, CSS y Three.js. Me encanta estar en constante aprendizaje y explorar las infinitas
-    posibilidades que ofrecen las nuevas tecnologías, tanto en el ámbito del desarrollo web como en el educativo.
-    Estoy siempre listo para aplicar mis conocimientos en la creación de páginas web y aplicaciones útiles que 
-    hagan una diferencia. ¡Gracias por visitar mi portfolio y espero que encuentres algo que te inspire! 
+    Soy Mauro Lizarraga, Software Developer con foco en frontend y experiencia construyendo soluciones en entornos
+    corporativos. Mi base analítica y formación matemática me permiten resolver problemas con criterio lógico,
+    estructura y atención al detalle. En Accenture consolidé experiencia trabajando con estándares enterprise,
+    colaboración multidisciplinaria y entregas orientadas a calidad, mantenibilidad y escalabilidad. Actualmente
+    estoy ampliando ese enfoque hacia un perfil fullstack con .NET 9, C#, APIs RESTful y PostgreSQL para diseñar
+    productos digitales de punta a punta con visión técnica y de negocio.
     </motion.p>
 
     <div className='mt-20 flex flex-wrap gap-10 '>

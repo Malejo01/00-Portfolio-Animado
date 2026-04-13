@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="csharpTitle csharpDesc">
+  <title id="csharpTitle">C sharp reference badge</title>
+  <desc id="csharpDesc">Stylized C sharp technology badge for portfolio display.</desc>
+  <defs>
+    <linearGradient id="csharpGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b2bd4" />
+      <stop offset="100%" stop-color="#5a189a" />
+    </linearGradient>
+  </defs>
+  <polygon points="64,8 104,31 104,97 64,120 24,97 24,31" fill="url(#csharpGradient)"/>
+  <text x="52" y="72" text-anchor="middle" font-size="34" font-family="Arial, Helvetica, sans-serif" font-weight="700" fill="#fff">C</text>
+  <text x="82" y="69" text-anchor="middle" font-size="22" font-family="Arial, Helvetica, sans-serif" font-weight="700" fill="#fff">#</text>
+</svg>
