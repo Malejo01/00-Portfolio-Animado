@@ -45,7 +45,7 @@ const About = () => {
     </motion.div>
     <motion.p
     variants={fadeIn("","", 0.1,1)}
-    className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
+    className='mt-4 text-secondary text-[14px] sm:text-[17px] max-w-3xl leading-[24px] sm:leading-[30px]'
     >
     Soy Mauro Lizarraga, Software Developer con foco en frontend y experiencia construyendo soluciones en entornos
     corporativos. Mi base analítica y formación matemática me permiten resolver problemas con criterio lógico,

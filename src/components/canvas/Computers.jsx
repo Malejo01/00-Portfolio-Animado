@@ -491,9 +491,18 @@ const DetailedComputer = ({ onFirstRender }) => {
 };
 
 const ComputerCanvas = () => {
+  const [isMobile, setIsMobile] = useState(false);
   const [hasWebGL, setHasWebGL] = useState(true);
   const [detailedRendered, setDetailedRendered] = useState(false);
   const [forceLightweight, setForceLightweight] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
   useEffect(() => {
     setHasWebGL(hasWebGLSupport());
@@ -517,20 +526,38 @@ const ComputerCanvas = () => {
     return null;
   }
 
+  const cameraProps = isMobile
+    ? { position: [7, -1, 1.75], fov: 42 }
+    : { position: [20.5, 3.1, 5.6], fov: 26 };
+
   return (
+    <div
+      style={{
+        width: "100%",
+        height: isMobile ? "65vh" : "100%",
+        position: isMobile ? "relative" : "absolute",
+        top: 0,
+        left: 0,
+        touchAction: "pan-y",
+      }}
+    >
     <Canvas
       frameloop="demand"
-      camera={{ position: [20.5, 3.1, 5.6], fov: 26 }}
+      camera={cameraProps}
       gl={{ preserveDrawingBuffer: false, alpha: true, powerPreference: "high-performance", antialias: true }}
-      dpr={[1.5, 2]}
+      dpr={isMobile ? [1, 1.5] : [1.5, 2]}
+      style={{ width: "100%", height: "100%" }}
     >
       <Suspense fallback={<LightweightComputer />}>
         <OrbitControls
           enableZoom={false}
+          enablePan={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
           autoRotate
           autoRotateSpeed={0.35}
+          touches={isMobile ? { ONE: 0, TWO: 0 } : undefined}
+          target={isMobile ? [0, -2.2, 0] : [0, 0, 0]}
         />
         {!detailedRendered && (
           <group>
@@ -549,6 +576,7 @@ const ComputerCanvas = () => {
         )}
       </Suspense>
     </Canvas>
+    </div>
   );
 };
 
