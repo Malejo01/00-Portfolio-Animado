@@ -14,6 +14,11 @@ const DeferredSection = ({ className, minHeight, children }) => {
     const element = containerRef.current
     if (!element || isVisible) return
 
+    if (typeof window === "undefined" || !window.IntersectionObserver) {
+      setIsVisible(true)
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) return
