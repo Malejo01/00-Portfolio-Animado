@@ -4,6 +4,7 @@ import { OrbitControls, Text, useGLTF, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 
 import CanvasLoader from "../Loader";
+import malejoLogo from "../../assets/logo.jpg";
 
 const DETAILED_TIMEOUT_MS = 4200;
 
@@ -25,8 +26,13 @@ const hasWebGLSupport = () => {
 
 const LightweightComputer = () => {
   const screenTexture = useTexture("/monitor-screen.png");
+  const monitorLogoTexture = useTexture(malejoLogo);
   const caseLedLeftRef = useRef();
   const caseLedRightRef = useRef();
+  const monitorLogoLedLeftRef = useRef();
+  const monitorLogoLedRightRef = useRef();
+  const monitorLogoLedTopRef = useRef();
+  const monitorLogoLedBottomRef = useRef();
   const keyboardLedRef = useRef();
   const mouseLedRef = useRef();
   const fanOneLedRef = useRef();
@@ -40,6 +46,14 @@ const LightweightComputer = () => {
     screenTexture.generateMipmaps = false;
     screenTexture.needsUpdate = true;
   }, [screenTexture]);
+
+  useMemo(() => {
+    monitorLogoTexture.colorSpace = THREE.SRGBColorSpace;
+    monitorLogoTexture.anisotropy = 16;
+    monitorLogoTexture.minFilter = THREE.LinearFilter;
+    monitorLogoTexture.magFilter = THREE.LinearFilter;
+    monitorLogoTexture.needsUpdate = true;
+  }, [monitorLogoTexture]);
 
   const keyboardKeys = useMemo(
     () =>
@@ -113,6 +127,30 @@ const LightweightComputer = () => {
       caseLedRightRef.current.emissiveIntensity = 1.05 + pulse * 0.7;
     }
 
+    if (monitorLogoLedLeftRef.current) {
+      monitorLogoLedLeftRef.current.emissive.setHSL(hueC, 1, 0.58);
+      monitorLogoLedLeftRef.current.color.setHSL(hueC, 1, 0.64);
+      monitorLogoLedLeftRef.current.emissiveIntensity = 1.0 + pulse * 0.6;
+    }
+
+    if (monitorLogoLedRightRef.current) {
+      monitorLogoLedRightRef.current.emissive.setHSL(hueA, 1, 0.58);
+      monitorLogoLedRightRef.current.color.setHSL(hueA, 1, 0.64);
+      monitorLogoLedRightRef.current.emissiveIntensity = 1.0 + pulse * 0.6;
+    }
+
+    if (monitorLogoLedTopRef.current) {
+      monitorLogoLedTopRef.current.emissive.setHSL(hueB, 1, 0.58);
+      monitorLogoLedTopRef.current.color.setHSL(hueB, 1, 0.64);
+      monitorLogoLedTopRef.current.emissiveIntensity = 1.0 + pulse * 0.6;
+    }
+
+    if (monitorLogoLedBottomRef.current) {
+      monitorLogoLedBottomRef.current.emissive.setHSL(hueC, 1, 0.58);
+      monitorLogoLedBottomRef.current.color.setHSL(hueC, 1, 0.64);
+      monitorLogoLedBottomRef.current.emissiveIntensity = 1.0 + pulse * 0.6;
+    }
+
     if (keyboardLedRef.current) {
       keyboardLedRef.current.emissive.setHSL(hueB, 1, 0.58);
       keyboardLedRef.current.color.setHSL(hueB, 1, 0.64);
@@ -161,6 +199,73 @@ const LightweightComputer = () => {
           <boxGeometry args={[4.67, 2.73, 0.16]} />
           <meshStandardMaterial color="#16203f" metalness={0.42} roughness={0.32} />
         </mesh>
+
+        <mesh position={[1.3, -0.12, -0.17]} rotation={[0, Math.PI, 0]}>
+          <planeGeometry args={[0.78, 0.78]} />
+          <meshBasicMaterial map={monitorLogoTexture} />
+        </mesh>
+
+        <mesh position={[1.73, -0.12, -0.171]} rotation={[0, Math.PI, 0]}>
+          <boxGeometry args={[0.025, 0.9, 0.012]} />
+          <meshStandardMaterial
+            ref={monitorLogoLedLeftRef}
+            color="#70deff"
+            emissive="#70deff"
+            emissiveIntensity={1.05}
+            metalness={0.2}
+            roughness={0.35}
+          />
+        </mesh>
+
+        <mesh position={[-0.65, -0.12, -0.171]} rotation={[0, Math.PI, 0]}>
+          <boxGeometry args={[0.025, 0.9, 0.012]} />
+          <meshStandardMaterial
+            ref={monitorLogoLedRightRef}
+            color="#ff73df"
+            emissive="#ff73df"
+            emissiveIntensity={1.05}
+            metalness={0.2}
+            roughness={0.35}
+          />
+        </mesh>
+
+        <mesh position={[0.54, 0.33, -0.171]} rotation={[0, Math.PI, 0]}>
+          <boxGeometry args={[2.42, 0.025, 0.012]} />
+          <meshStandardMaterial
+            ref={monitorLogoLedTopRef}
+            color="#89ff65"
+            emissive="#89ff65"
+            emissiveIntensity={1.05}
+            metalness={0.2}
+            roughness={0.35}
+          />
+        </mesh>
+
+        <mesh position={[0.54, -0.57, -0.171]} rotation={[0, Math.PI, 0]}>
+          <boxGeometry args={[2.42, 0.025, 0.012]} />
+          <meshStandardMaterial
+            ref={monitorLogoLedBottomRef}
+            color="#70deff"
+            emissive="#70deff"
+            emissiveIntensity={1.05}
+            metalness={0.2}
+            roughness={0.35}
+          />
+        </mesh>
+
+        <Text
+          position={[-0.75, -0.12, -0.17]}
+          rotation={[0, Math.PI, 0]}
+          fontSize={0.34}
+          color="#ffffff"
+          anchorX="right"
+          anchorY="middle"
+          maxWidth={1.55}
+          outlineWidth={0.018}
+          outlineColor="#0b1020"
+        >
+          Malejo Portfolio
+        </Text>
 
         <mesh position={[0, -0.1, 0.12]}>
           <planeGeometry args={[4.32, 2.32]} />
@@ -492,6 +597,7 @@ const DetailedComputer = ({ onFirstRender }) => {
 
 const ComputerCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
   const [hasWebGL, setHasWebGL] = useState(true);
   const [detailedRendered, setDetailedRendered] = useState(false);
   const [forceLightweight, setForceLightweight] = useState(false);
@@ -528,7 +634,7 @@ const ComputerCanvas = () => {
 
   const cameraProps = isMobile
     ? { position: [7, -1, 1.75], fov: 42 }
-    : { position: [20.5, 3.1, 5.6], fov: 26 };
+    : { position: [18.8, 2.4, 5.2], fov: 26 };
 
   return (
     <div
@@ -539,6 +645,7 @@ const ComputerCanvas = () => {
         top: 0,
         left: 0,
         touchAction: "pan-y",
+        cursor: isMobile ? "default" : isDragging ? "grabbing" : "grab",
       }}
     >
     <Canvas
@@ -547,6 +654,15 @@ const ComputerCanvas = () => {
       gl={{ preserveDrawingBuffer: false, alpha: true, powerPreference: "high-performance", antialias: true }}
       dpr={isMobile ? [1, 1.5] : [1.5, 2]}
       style={{ width: "100%", height: "100%" }}
+      onPointerDown={() => {
+        if (!isMobile) setIsDragging(true);
+      }}
+      onPointerUp={() => {
+        if (!isMobile) setIsDragging(false);
+      }}
+      onPointerLeave={() => {
+        if (!isMobile) setIsDragging(false);
+      }}
     >
       <Suspense fallback={<LightweightComputer />}>
         <OrbitControls
@@ -557,7 +673,7 @@ const ComputerCanvas = () => {
           autoRotate
           autoRotateSpeed={0.35}
           touches={isMobile ? { ONE: 0, TWO: 0 } : undefined}
-          target={isMobile ? [0, -2.2, 0] : [0, 0, 0]}
+          target={isMobile ? [0, -2.2, 0] : [0, -1.6, 0]}
         />
         {!detailedRendered && (
           <group>

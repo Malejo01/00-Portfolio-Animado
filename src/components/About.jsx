@@ -55,7 +55,7 @@ const About = () => {
     productos digitales de punta a punta con visión técnica y de negocio.
     </motion.p>
 
-    <div className='mt-20 flex flex-wrap gap-10 '>
+    <div className='mt-20 flex flex-wrap justify-center gap-10'>
       {services.map((service,index) => {
         return <ServiceCard key={service.title} index={index} {...service}/>
       })}

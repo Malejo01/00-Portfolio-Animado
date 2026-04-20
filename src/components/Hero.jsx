@@ -5,11 +5,11 @@ import { ComputersCanvas } from './canvas'
 
 const Hero = () => {
   return (
-    <section className="relative w-full min-h-screen sm:h-screen mx-auto flex flex-col sm:block" >
-      <div className={`${styles.paddingX} sm:absolute sm:inset-0 sm:top-[100px] max-w-7xl mx-auto flex flex-row items-start gap-5 z-10 pointer-events-none pt-[80px] sm:pt-0 shrink-0`}>
+    <section className="relative w-full min-h-screen mx-auto flex flex-col pt-0">
+      <div className={`${styles.paddingX} max-w-7xl mx-auto flex flex-row items-start gap-5 z-10 pointer-events-none pt-0 shrink-0`}>
         <div className='flex flex-col justify-center items-center mt-5'>
           <div className='w-5 h-5 rounded-full bg-[#915eff]'/>
-          <div className='w-1 sm:h-80 h-40 violet-gradient'/>
+          <div className='w-1 h-24 sm:h-44 md:h-80 violet-gradient'/>
         </div>
         <div className='max-w-3xl'>
           <h1 className={`${styles.heroHeadText} text-white`}>
@@ -21,7 +21,7 @@ const Hero = () => {
         </div>
 
       </div>
-      <div className="sm:absolute sm:inset-0 flex-1 min-h-[52vh] sm:min-h-0">
+      <div className="w-full flex-1 min-h-[58vh] sm:min-h-[50vh] md:min-h-[62vh] sm:-mt-10 md:-mt-2">
         <ComputersCanvas/>
       </div>
 

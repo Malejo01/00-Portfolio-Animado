@@ -1,4 +1,4 @@
-import { Suspense } from "react"
+import { Suspense, useState } from "react"
 import { Canvas } from "@react-three/fiber"
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei"
 
@@ -20,7 +20,11 @@ const Earth = () => {
 
 
 const EarthCanvas = () => {
+  const [isDragging, setIsDragging] = useState(false);
   return (
+    <div
+      style={{ width: "100%", height: "100%", cursor: isDragging ? "grabbing" : "grab" }}
+    >
     <Canvas
       shadows
       frameloop="demand"
@@ -31,6 +35,9 @@ const EarthCanvas = () => {
         far: 200, 
         position: [-4,3,6]
       }}
+      onPointerDown={() => setIsDragging(true)}
+      onPointerUp={() => setIsDragging(false)}
+      onPointerLeave={() => setIsDragging(false)}
     >
       <Suspense fallback={<CanvasLoader/>}>
         <OrbitControls
@@ -44,6 +51,7 @@ const EarthCanvas = () => {
 
       </Suspense>
     </Canvas>
+    </div>
   )
 }
 export default EarthCanvas;
