@@ -36,6 +36,20 @@ export const translations = {
         "Participación en el análisis de despliegues y colaboración con equipos de QA para asegurar que todos los fixes cumplieran con altos estándares de calidad y estabilidad.",
         "Implementación de componentes de formulario reutilizables en Angular con validación y lógica de filtrado por capas, reduciendo el código duplicado de la interfaz de usuario."
       ],
+      "instituto martín miguel de güemes_title": "Profesor de Educación Superior – Álgebra Lineal y Análisis Matemático",
+      "instituto martín miguel de güemes_date": "Junio 2026 - Actualidad",
+      "instituto martín miguel de güemes_points": [
+        "Dictado de las cátedras de Álgebra Lineal y Análisis Matemático I para la carrera de Ciencia de Datos e Inteligencia Artificial.",
+        "Enfoque didáctico orientado a la aplicación práctica de matrices, espacios vectoriales, cálculo diferencial y optimización matemática en el desarrollo de modelos de Machine Learning y redes neuronales.",
+        "Capacitación de futuros profesionales del sector IT en la abstracción matemática y la lógica rigurosa necesarias para el diseño de algoritmos avanzados."
+      ],
+      "instituto de educación superior del milagro_title": "Profesor de Educación Superior – Probabilidad y Estadística",
+      "instituto de educación superior del milagro_date": "Abril 2026 - Actualidad",
+      "instituto de educación superior del milagro_points": [
+        "Docente titular de la materia Probabilidad y Estadística para la carrera de Técnico en Análisis de Sistemas.",
+        "Desarrollo de competencias analíticas avanzadas aplicadas a la ingeniería de software, el modelado de datos, el análisis predictivo y la optimización de sistemas lógicos.",
+        "Coordinación y evaluación de proyectos técnicos estudiantiles enfocados en la resolución de problemas de software mediante el pensamiento estadístico."
+      ],
     },
     tech: {
       subtext: "Mis habilidades",
@@ -64,7 +78,29 @@ export const translations = {
         sql: "SQL Certification",
         vue: "Vue JS - Frontend Web Developer",
         dotnet: "C# and .NET Developer - Backend Web Developer",
-        react: "React JS - Frontend Web Developer"
+        react: "React JS - Frontend Web Developer",
+        education: "Licenciatura en Educación",
+        math: "Profesor de Matemática"
+      },
+      tags: {
+        project_management: "Gestión de Proyectos",
+        team_leadership: "Liderazgo de Equipos",
+        instructional_design: "Diseño Instruccional",
+        analytical_thinking: "Pensamiento Analítico",
+        logic_algorithms: "Lógica y Algoritmia",
+        problem_solving: "Resolución de Problemas",
+        databases: "Bases de Datos",
+        sql_queries: "Consultas SQL",
+        data_analysis: "Análisis de Datos",
+        frontend: "Desarrollo Frontend",
+        state_management: "Gestión de Estado",
+        single_page_apps: "Single Page Apps",
+        backend: "Desarrollo Backend",
+        oop: "POO",
+        rest_apis: "APIs REST",
+        react_dev: "Desarrollo React",
+        hooks: "React Hooks",
+        web_design: "Diseño Web"
       }
     },
     contact: {
@@ -119,6 +155,20 @@ export const translations = {
         "Participated in the analysis of deployments and collaborated with QA teams to ensure all fixes met high stability and quality standards.",
         "Implemented reusable Angular form components with layered validation and filtering logic, reducing duplicated UI code and improving consistency across enterprise client workflows."
       ],
+      "instituto martín miguel de güemes_title": "Higher Education Professor – Linear Algebra and Mathematical Analysis",
+      "instituto martín miguel de güemes_date": "June 2026 - Present",
+      "instituto martín miguel de güemes_points": [
+        "Taught Linear Algebra and Mathematical Analysis I courses for the Data Science and Artificial Intelligence program.",
+        "Delivered a didactic approach focused on the practical application of matrices, vector spaces, differential calculus, and mathematical optimization in the development of Machine Learning models and neural networks.",
+        "Trained future IT professionals in mathematical abstraction and rigorous logic required for designing advanced algorithms."
+      ],
+      "instituto de educación superior del milagro_title": "Higher Education Professor – Probability and Statistics",
+      "instituto de educación superior del milagro_date": "April 2026 - Present",
+      "instituto de educación superior del milagro_points": [
+        "Tenured professor of Probability and Statistics for the Systems Analysis Technician program.",
+        "Developed advanced analytical skills applied to software engineering, data modeling, predictive analysis, and logical systems optimization.",
+        "Coordinated and evaluated student technical projects focused on solving software problems through statistical thinking."
+      ],
     },
     tech: {
       subtext: "My skills",
@@ -147,7 +197,29 @@ export const translations = {
         sql: "SQL Certification",
         vue: "Vue JS - Frontend Web Developer",
         dotnet: "C# and .NET Developer - Backend Web Developer",
-        react: "React JS - Frontend Web Developer"
+        react: "React JS - Frontend Web Developer",
+        education: "Bachelor's Degree in Education",
+        math: "Professor of Mathematics"
+      },
+      tags: {
+        project_management: "Project Management",
+        team_leadership: "Team Leadership",
+        instructional_design: "Instructional Design",
+        analytical_thinking: "Analytical Thinking",
+        logic_algorithms: "Logic & Algorithms",
+        problem_solving: "Problem Solving",
+        databases: "Databases",
+        sql_queries: "SQL Queries",
+        data_analysis: "Data Analysis",
+        frontend: "Frontend Development",
+        state_management: "State Management",
+        single_page_apps: "Single Page Apps",
+        backend: "Backend Development",
+        oop: "OOP",
+        rest_apis: "REST APIs",
+        react_dev: "React Development",
+        hooks: "React Hooks",
+        web_design: "Web Design"
       }
     },
     contact: {

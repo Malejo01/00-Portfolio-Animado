@@ -39,6 +39,10 @@ import accenture from "./company/accenture.png";
 import udemy from "./company/udemy.svg";
 import datacamp from "./company/datacamp.svg";
 import coderhouse from "./company/coderhouse.svg";
+import guemesLogo from "./guemes-logo.png";
+import milagroLogo from "./milagro-logo.png";
+import educationIcon from "./education-icon.png";
+import mathIcon from "./math-icon.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -89,6 +93,10 @@ export {
   udemy,
   datacamp,
   coderhouse,
+  guemesLogo,
+  milagroLogo,
+  educationIcon,
+  mathIcon,
   carrent,
   jobit,
   tripguide,

@@ -8,7 +8,7 @@ import { certificates } from "../constants"
 import { fadeIn, textVariant } from "../utils/motion"
 import { useLanguage } from "../context/LanguageContext"
 
-const CertificateCard = ({ index, title, provider, year, icon, pdf }) => {
+const CertificateCard = ({ index, title, provider, year, icon, pdf, tags }) => {
   const { t } = useLanguage();
   const isPdf = pdf.toLowerCase().endsWith('.pdf');
 
@@ -17,6 +17,8 @@ const CertificateCard = ({ index, title, provider, year, icon, pdf }) => {
     if (title.includes("Vue")) return "vue";
     if (title.includes("C#") || title.includes("NET")) return "dotnet";
     if (title.includes("React")) return "react";
+    if (title.includes("Educación") || title.includes("Education")) return "education";
+    if (title.includes("Matemática") || title.includes("Mathematics")) return "math";
     return "";
   };
 
@@ -67,6 +69,18 @@ const CertificateCard = ({ index, title, provider, year, icon, pdf }) => {
           <div className="mt-5">
             <h3 className="text-white font-bold text-[18px] leading-[22px]">{translatedTitle}</h3>
             <p className="mt-2 text-secondary text-[14px]">{provider}</p>
+            {tags && tags.length > 0 && (
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {tags.map((tag) => {
+                  const translatedTagName = tag.key ? t(`certificates.tags.${tag.key}`) : tag.name;
+                  return (
+                    <span key={tag.name} className={`text-[12px] font-medium px-2 py-0.5 rounded-full bg-black/10 ${tag.color}`}>
+                      #{translatedTagName}
+                    </span>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
 

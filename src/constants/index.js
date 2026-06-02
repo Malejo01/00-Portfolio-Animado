@@ -21,6 +21,8 @@ import {
     tesla,
     shopify,
     accenture,
+    guemesLogo,
+    milagroLogo,
     nextjs,
     vuejs,
     supabase,
@@ -30,6 +32,8 @@ import {
     udemy,
     datacamp,
     coderhouse,
+    educationIcon,
+    mathIcon,
     carrent,
     jobit,
     tripguide,
@@ -184,6 +188,30 @@ import {
         "Gestión del ciclo de vida de desarrollo de punta a punta, incluyendo el seguimiento de tareas y el progreso de sprints mediante Azure DevOps.",
         "Participación en el análisis de despliegues y colaboración con equipos de QA para asegurar que todos los fixes cumplieran con altos estándares de calidad y estabilidad.",
         "Implementación de componentes de formulario reutilizables en Angular con validación y lógica de filtrado por capas, reduciendo el código duplicado de la interfaz de usuario."
+      ],
+    },
+    {
+      title: "Profesor de Educación Superior – Álgebra Lineal y Análisis Matemático",
+      company_name: "Instituto Martín Miguel de Güemes",
+      icon: guemesLogo,
+      iconBg: "#383E56",
+      date: "Junio 2026 - Actualidad",
+      points: [
+        "Dictado de las cátedras de Álgebra Lineal y Análisis Matemático I para la carrera de Ciencia de Datos e Inteligencia Artificial.",
+        "Enfoque didáctico orientado a la aplicación práctica de matrices, espacios vectoriales, cálculo diferencial y optimización matemática en el desarrollo de modelos de Machine Learning y redes neuronales.",
+        "Capacitación de futuros profesionales del sector IT en la abstracción matemática y la lógica rigurosa necesarias para el diseño de algoritmos avanzados."
+      ],
+    },
+    {
+      title: "Profesor de Educación Superior – Probabilidad y Estadística",
+      company_name: "Instituto de Educación Superior del Milagro",
+      icon: milagroLogo,
+      iconBg: "#E6DEDD",
+      date: "Abril 2026 - Actualidad",
+      points: [
+        "Docente titular de la materia Probabilidad y Estadística para la carrera de Técnico en Análisis de Sistemas.",
+        "Desarrollo de competencias analíticas avanzadas aplicadas a la ingeniería de software, el modelado de datos, el análisis predictivo y la optimización de sistemas lógicos.",
+        "Coordinación y evaluación de proyectos técnicos estudiantiles enfocados en la resolución de problemas de software mediante el pensamiento estadístico."
       ],
     },
   ];
@@ -441,6 +469,11 @@ import {
       year: "2026",
       icon: datacamp,
       pdf: "/certificates/SQL_DataCamp_2026.pdf",
+      tags: [
+        { name: "Bases de Datos", color: "blue-text-gradient", key: "databases" },
+        { name: "Consultas SQL", color: "green-text-gradient", key: "sql_queries" },
+        { name: "Análisis de Datos", color: "pink-text-gradient", key: "data_analysis" }
+      ]
     },
     {
       title: "Vue JS - Frontend Web Developer",
@@ -448,6 +481,11 @@ import {
       year: "2025",
       icon: udemy,
       pdf: "/certificates/VueJS_Udemy_2025.pdf",
+      tags: [
+        { name: "Desarrollo Frontend", color: "blue-text-gradient", key: "frontend" },
+        { name: "Gestión de Estado", color: "green-text-gradient", key: "state_management" },
+        { name: "Single Page Apps", color: "pink-text-gradient", key: "single_page_apps" }
+      ]
     },
     {
       title: "C# and .NET Developer - Backend Web Developer",
@@ -455,6 +493,11 @@ import {
       year: "2025",
       icon: udemy,
       pdf: "/certificates/CSharp_NET_Udemy_2025.pdf",
+      tags: [
+        { name: "Desarrollo Backend", color: "blue-text-gradient", key: "backend" },
+        { name: "POO", color: "green-text-gradient", key: "oop" },
+        { name: "APIs REST", color: "pink-text-gradient", key: "rest_apis" }
+      ]
     },
     {
       title: "React JS - Frontend Web Developer",
@@ -462,6 +505,35 @@ import {
       year: "2022",
       icon: coderhouse,
       pdf: "/certificates/ReactJS_CoderHouse_2022.png",
+      tags: [
+        { name: "Desarrollo React", color: "blue-text-gradient", key: "react_dev" },
+        { name: "React Hooks", color: "green-text-gradient", key: "hooks" },
+        { name: "Diseño Web", color: "pink-text-gradient", key: "web_design" }
+      ]
+    },
+    {
+      title: "Licenciatura en Educación",
+      provider: "Universidad Empresarial Siglo 21",
+      year: "2021",
+      icon: educationIcon,
+      pdf: "/certificates/Licenciatura_Educacion_Siglo21_2021.jpg",
+      tags: [
+        { name: "Gestión de Proyectos", color: "blue-text-gradient", key: "project_management" },
+        { name: "Liderazgo de Equipos", color: "green-text-gradient", key: "team_leadership" },
+        { name: "Diseño Instruccional", color: "purple-text-gradient", key: "instructional_design" }
+      ]
+    },
+    {
+      title: "Profesor de Matemática",
+      provider: "Instituto Superior del Profesorado de Salta N° 6005",
+      year: "2016",
+      icon: mathIcon,
+      pdf: "/certificates/Profesorado_Matematica_Salta_2016.jpg",
+      tags: [
+        { name: "Pensamiento Analítico", color: "orange-text-gradient", key: "analytical_thinking" },
+        { name: "Lógica y Algoritmia", color: "pink-text-gradient", key: "logic_algorithms" },
+        { name: "Resolución de Problemas", color: "purple-text-gradient", key: "problem_solving" }
+      ]
     },
   ];
   
