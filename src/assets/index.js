@@ -33,6 +33,11 @@ import tesla from "./company/tesla.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import malejoMath from "./malejo-math-screenshot.png";
+import quePintaSalta from "./que-pinta-salta-screenshot.png";
+import saltaPay from "./salta-pay-screenshot.png";
+import elGordoBeio from "./el-gordo-beio-screenshot.png";
+import pokemonGame from "./pokemon-game-screenshot.png";
 
 export {
   logo,
@@ -67,4 +72,9 @@ export {
   carrent,
   jobit,
   tripguide,
+  malejoMath,
+  quePintaSalta,
+  saltaPay,
+  elGordoBeio,
+  pokemonGame,
 };
