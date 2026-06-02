@@ -8,6 +8,7 @@ import { styles } from '../styles'
 import { EarthCanvas } from './canvas'
 import { SectionWrapper } from './hoc'
 import { slideIn } from '../utils/motion'
+import { useLanguage } from '../context/LanguageContext'
 
 // gsifqZIa5fnyTyZSm
 // template_uyye3cf
@@ -15,6 +16,7 @@ import { slideIn } from '../utils/motion'
 
 const Contact = () => {
 const formRef= useRef();
+const { t } = useLanguage();
   
 const [form,setForm] = useState ({
   name:'',
@@ -48,7 +50,7 @@ const handleSubmit = (e) => {
     )
     .then(() => {
       setLoading(false);
-      alert('¡Gracias! estare en contacto lo mas pronto posible.');
+      alert(t('contact.successAlert'));
 
       setForm({
         name:'',
@@ -59,7 +61,7 @@ const handleSubmit = (e) => {
       setLoading(false);
       console.log(error);
 
-      alert('Ocurrio un error inesperado')
+      alert(t('contact.errorAlert'));
     })
 }
 
@@ -69,8 +71,8 @@ const handleSubmit = (e) => {
       variants={slideIn('left','tween', 0.2 , 1 )}
       className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
       >
-        <p className={styles.sectionSubText}>¡Hablemos!</p>
-        <h3 className={styles.sectionHeadText}>Contacto.</h3>
+        <p className={styles.sectionSubText}>{t('contact.subtext')}</p>
+        <h3 className={styles.sectionHeadText}>{t('contact.title')}.</h3>
 
         <form
           ref={formRef}
@@ -78,43 +80,43 @@ const handleSubmit = (e) => {
           className='mt-12 flex flex-col gap-8'
         >
           <label className='flex flex-col'>
-          <span className='text-white font-medium mb-4'>Tu nombre</span>
+          <span className='text-white font-medium mb-4'>{t('contact.name')}</span>
           <input
             type='text'
             name='name'
             value={form.name}
             onChange={handleChange}
-            placeholder='¿Cual es tu nombre?'
+            placeholder={t('contact.namePlaceholder')}
             className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
           />
           </label>
 
           <label className='flex flex-col'>
-          <span className='text-white font-medium mb-4'>Tu Email</span>
+          <span className='text-white font-medium mb-4'>{t('contact.email')}</span>
           <input
             type='email'
             name='email'
             value={form.email}
             onChange={handleChange}
-            placeholder='¿Cual es tu email?'
+            placeholder={t('contact.emailPlaceholder')}
             className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
           />
           </label>
 
           <label className='flex flex-col'>
-          <span className='text-white font-medium mb-4'>Tu mensaje</span>
+          <span className='text-white font-medium mb-4'>{t('contact.message')}</span>
           <textarea
             rows="7"
             name='message'
             value={form.message}
             onChange={handleChange}
-            placeholder='Escribe aqui tu mensaje'
+            placeholder={t('contact.messagePlaceholder')}
             className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
           />
           </label>
 
           <button type='submit' className='bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl'>
-            {loading ? 'Enviando email...' : 'Enviar'}
+            {loading ? t('contact.sending') : t('contact.send')}
           </button>
         </form>
       </motion.div>

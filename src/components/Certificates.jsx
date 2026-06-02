@@ -6,9 +6,22 @@ import { styles } from "../styles"
 import { SectionWrapper } from "./hoc"
 import { certificates } from "../constants"
 import { fadeIn, textVariant } from "../utils/motion"
+import { useLanguage } from "../context/LanguageContext"
 
 const CertificateCard = ({ index, title, provider, year, icon, pdf }) => {
+  const { t } = useLanguage();
   const isPdf = pdf.toLowerCase().endsWith('.pdf');
+
+  const getCertKey = (title) => {
+    if (title.includes("SQL")) return "sql";
+    if (title.includes("Vue")) return "vue";
+    if (title.includes("C#") || title.includes("NET")) return "dotnet";
+    if (title.includes("React")) return "react";
+    return "";
+  };
+
+  const certKey = getCertKey(title);
+  const translatedTitle = certKey ? t(`certificates.certs.${certKey}`) : title;
 
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
@@ -52,7 +65,7 @@ const CertificateCard = ({ index, title, provider, year, icon, pdf }) => {
           </div>
 
           <div className="mt-5">
-            <h3 className="text-white font-bold text-[18px] leading-[22px]">{title}</h3>
+            <h3 className="text-white font-bold text-[18px] leading-[22px]">{translatedTitle}</h3>
             <p className="mt-2 text-secondary text-[14px]">{provider}</p>
           </div>
         </div>
@@ -68,7 +81,7 @@ const CertificateCard = ({ index, title, provider, year, icon, pdf }) => {
               rel="noopener noreferrer"
               className="text-[#915eff] hover:text-[#7c4dff] text-[14px] font-semibold flex items-center gap-1 transition duration-300 cursor-pointer"
             >
-              Ver Credencial
+              {t('certificates.verCredencial')}
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
@@ -81,11 +94,13 @@ const CertificateCard = ({ index, title, provider, year, icon, pdf }) => {
 }
 
 const Certificates = () => {
+  const { t } = useLanguage();
+
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Formación y validaciones</p>
-        <h2 className={styles.sectionHeadText}>Cursos y Certificados</h2>
+        <p className={styles.sectionSubText}>{t('certificates.subtext')}</p>
+        <h2 className={styles.sectionHeadText}>{t('certificates.title')}</h2>
       </motion.div>
 
       <div className="mt-20 flex flex-wrap justify-center gap-7">

@@ -1,9 +1,12 @@
 import {motion} from 'framer-motion'
 import {styles} from '../styles'
 import { ComputersCanvas } from './canvas'
+import { useLanguage } from '../context/LanguageContext'
 
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative w-full min-h-screen mx-auto flex flex-col pt-0">
       <div className={`${styles.paddingX} max-w-7xl mx-auto flex flex-row items-start gap-5 z-10 pointer-events-none pt-0 shrink-0`}>
@@ -16,7 +19,7 @@ const Hero = () => {
             Fullstack Developer <span className='text-[#915eff]'>| Analytical & AI Developer</span>
           </h1>
           <p className={`${styles.heroSubText} mt-4 text-white-100 max-w-2xl`}>
-            Creando experiencias digitales escalables con React, Angular y Vue, fusionando rigor matemático y lógica de Inteligencia Artificial.
+            {t('hero.subtitle')}
           </p>
           <div className="mt-8 flex flex-wrap gap-4 items-center z-30 relative pointer-events-auto">
             <a
@@ -27,7 +30,7 @@ const Hero = () => {
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
-              Descargar CV
+              {t('hero.downloadCv')}
             </a>
             <a
               href="https://linkedin.com/in/mauro-alejandro-lizarraga-8260711a3"

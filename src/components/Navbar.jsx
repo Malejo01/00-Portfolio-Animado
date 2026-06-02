@@ -4,10 +4,12 @@ import {styles} from '../styles'
 import { navLinks } from '../constants'
 import {menu, close} from '../assets'
 import malejo from '../assets/logo.jpg'
+import { useLanguage } from '../context/LanguageContext'
 
 const Navbar = () => {
   const [active, setActive] = useState("");
-  const [toggle, setToggle] = useState(false)
+  const [toggle, setToggle] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
 
   return (
     <nav className={ `${styles.paddingX} w-full flex items-center py-5 fixed top-0 left-0 z-[1000] bg-primary`}>
@@ -27,39 +29,55 @@ const Navbar = () => {
             Malejo <span> Portfolio </span>
           </p>
         </Link>
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
+        <ul className='list-none hidden sm:flex flex-row gap-10 items-center'>
           {navLinks.map((link) => (
             <li key={link.id}
-                className={`${ active === link.title ? "text-white" : "text-secondary"}
+                className={`${ active === link.id ? "text-white" : "text-secondary"}
                 hover:text-white text-[18px] font-medium cursor-pointer`}
-                onClick={() => setActive(link.title)}
+                onClick={() => setActive(link.id)}
             >
-              <a href={`#${link.id}`}>{link.title}</a>
+              <a href={`#${link.id}`}>{t(`nav.${link.id}`)}</a>
             </li>
           ))}
+          {/* Language Toggle Button */}
+          <li>
+            <button
+              onClick={toggleLanguage}
+              className="text-secondary hover:text-white font-bold px-3 py-1.5 rounded-lg border border-white/20 hover:border-white/50 transition duration-300 cursor-pointer text-[14px]"
+            >
+              {language === 'es' ? 'EN' : 'ES'}
+            </button>
+          </li>
         </ul>
 {/*Ahora hacemos la parte para celulares */}
 
-        <div className='sm:hidden flex flex-1 justify-end items-center'>
+        <div className='sm:hidden flex flex-1 justify-end items-center gap-4'>
+          {/* Mobile Language Toggle */}
+          <button
+            onClick={toggleLanguage}
+            className="text-secondary hover:text-white font-bold px-2.5 py-1 rounded-md border border-white/20 hover:border-white/40 transition duration-300 cursor-pointer text-[13px]"
+          >
+            {language === 'es' ? 'EN' : 'ES'}
+          </button>
           <img src={toggle ? close : menu} alt='menu'
             className='w-[28px] h-[28px] object-contain cursor-pointer'
             onClick={() => setToggle(!toggle)}
           />
           <div className={`${!toggle ? 'hidden' : 'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-[110] rounded-xl`}>
-          <ul className='list-none flex justify-end items-start flex-col gap-4'>
-          {navLinks.map((link) => (
-            <li key={link.id}
-                className={`${ active === link.title ? "text-white" : "text-secondary"}
-                font-poppins font-medium cursor-pointer text-[16px] `}
-                onClick={() => {
-                  setToggle(!toggle)
-                  setActive(link.title)
-                }}
-            >
-              <a href={`#${link.id}`}>{link.title}</a>
-            </li>
-          ))}
-        </ul>
+            <ul className='list-none flex justify-end items-start flex-col gap-4'>
+              {navLinks.map((link) => (
+                <li key={link.id}
+                    className={`${ active === link.id ? "text-white" : "text-secondary"}
+                    font-poppins font-medium cursor-pointer text-[16px] `}
+                    onClick={() => {
+                      setToggle(!toggle)
+                      setActive(link.id)
+                    }}
+                >
+                  <a href={`#${link.id}`}>{t(`nav.${link.id}`)}</a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 

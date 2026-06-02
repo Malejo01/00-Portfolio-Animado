@@ -6,9 +6,11 @@ import { styles } from '../styles';
 import { services } from '../constants';
 import {fadeIn, textVariant} from '../utils/motion';
 import { SectionWrapper } from './hoc';
+import { useLanguage } from '../context/LanguageContext';
 
 
 const ServiceCard = ({index,title,description,icon}) => {
+  const { t } = useLanguage();
   return (
     <Tilt className= "xs:w-[250px] w-full" >
       <motion.div
@@ -25,9 +27,9 @@ const ServiceCard = ({index,title,description,icon}) => {
         >
           <img src={icon} alt={title}
             className='w-16 h-16 object-contain'/>
-          <h3 className='text-white text- [20px] font-bold text-center'>{title}</h3>
+          <h3 className='text-white text-[20px] font-bold text-center'>{t(`about.service${index + 1}_title`)}</h3>
           <p className='mt-3 text-secondary text-[14px] leading-6 text-center'>
-            {description}
+            {t(`about.service${index + 1}_desc`)}
           </p>
         </div>
     </motion.div>
@@ -37,23 +39,25 @@ const ServiceCard = ({index,title,description,icon}) => {
 
 
 const About = () => {
+  const { t } = useLanguage();
+
   return (
     <>
     <motion.div variants={textVariant()}>
-      <p className={styles.sectionSubText}>Introducción</p>
-      <h2 className={styles.sectionHeadText}> Descripción General</h2>
+      <p className={styles.sectionSubText}>{t('about.subtext')}</p>
+      <h2 className={styles.sectionHeadText}> {t('about.title')}</h2>
     </motion.div>
     <motion.p
     variants={fadeIn("","", 0.1,1)}
     className='mt-4 text-secondary text-[14px] sm:text-[17px] max-w-3xl leading-[24px] sm:leading-[30px]'
     >
-      Soy Mauro Lizarraga, Fullstack Developer, Licenciado en Educación y Profesor de Matemática. Mi formación pedagógica y base analítica me otorgan una ventaja competitiva única: la capacidad de traducir problemas lógicos complejos y abstractos en arquitecturas de software claras, predecibles y mantenibles.
+      {t('about.desc1')}
     </motion.p>
     <motion.p
     variants={fadeIn("","", 0.15,1)}
     className='mt-4 text-secondary text-[14px] sm:text-[17px] max-w-3xl leading-[24px] sm:leading-[30px]'
     >
-      Tras consolidar experiencia en Accenture construyendo interfaces web corporativas bajo estándares de alto rendimiento (Angular, React, Vue), hoy en día diseño soluciones de punta a punta integrando .NET, bases de datos y flujos de Inteligencia Artificial. Actualmente, aplico este perfil híbrido tanto en la docencia de nivel Terciario (donde enseño Álgebra Lineal, Análisis Matemático, Inteligencia Artificial y Ciencia de Datos) como en la digitalización institucional y capacitación de más de 120 educadores, uniendo la psicología del aprendizaje con un diseño de interfaces (UX/UI) fluido y centrado en el usuario.
+      {t('about.desc2')}
     </motion.p>
 
     <div className='mt-20 flex flex-wrap justify-center gap-10'>

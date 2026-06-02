@@ -1,6 +1,7 @@
 import { Suspense, lazy, useEffect, useRef, useState } from "react"
 import { BrowserRouter } from "react-router-dom"
 import {About, Hero, Navbar, Tech, Experience } from './components'
+import { LanguageProvider } from "./context/LanguageContext"
 
 const Works = lazy(() => import("./components/Works"))
 const Contact = lazy(() => import("./components/Contact"))
@@ -57,31 +58,33 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Navbar/>
-      <div className="pt-20 sm:pt-24 bg-hero-pattern bg-cover bg-no-repeat bg-center">
-        <div className="relative z-0">
-          <Hero />
+      <LanguageProvider>
+        <Navbar/>
+        <div className="pt-20 sm:pt-24 bg-hero-pattern bg-cover bg-no-repeat bg-center">
+          <div className="relative z-0">
+            <Hero />
+          </div>
         </div>
-      </div>
-      <div className="bg-primary">
-        <About />
-      </div>
-      <div className="bg-primary">
-        <Experience />
-      </div>
-      <div className="bg-primary">
-        <Tech />
-      </div>
-      <DeferredSection className="relative z-10 bg-primary" minHeight="680px">
-        <Works />
-      </DeferredSection>
-      <DeferredSection className="relative z-10 bg-primary" minHeight="500px">
-        <Certificates />
-      </DeferredSection>
-      <DeferredSection className="relative z-0" minHeight="860px">
-        <Contact />
-        <StarsCanvas/>
-      </DeferredSection>
+        <div className="bg-primary">
+          <About />
+        </div>
+        <div className="bg-primary">
+          <Experience />
+        </div>
+        <div className="bg-primary">
+          <Tech />
+        </div>
+        <DeferredSection className="relative z-10 bg-primary" minHeight="680px">
+          <Works />
+        </DeferredSection>
+        <DeferredSection className="relative z-10 bg-primary" minHeight="500px">
+          <Certificates />
+        </DeferredSection>
+        <DeferredSection className="relative z-0" minHeight="860px">
+          <Contact />
+          <StarsCanvas/>
+        </DeferredSection>
+      </LanguageProvider>
     </BrowserRouter>
   )
 }

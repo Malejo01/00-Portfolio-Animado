@@ -3,13 +3,16 @@ import { SectionWrapper } from "./hoc"
 import { technologies } from "../constants"
 import { styles } from "../styles"
 import { textVariant } from "../utils/motion"
+import { useLanguage } from "../context/LanguageContext"
 
 const Tech = () => {
+  const { t } = useLanguage();
+
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Stack</p>
-        <h2 className={styles.sectionHeadText}>Tecnologías</h2>
+        <p className={styles.sectionSubText}>{t('tech.subtext')}</p>
+        <h2 className={styles.sectionHeadText}>{t('tech.title')}</h2>
       </motion.div>
 
       <div className="mt-10 grid grid-cols-3 sm:flex sm:flex-row sm:flex-wrap sm:justify-center gap-6 sm:gap-10">
