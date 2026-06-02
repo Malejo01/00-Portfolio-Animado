@@ -47,12 +47,13 @@ const About = () => {
     variants={fadeIn("","", 0.1,1)}
     className='mt-4 text-secondary text-[14px] sm:text-[17px] max-w-3xl leading-[24px] sm:leading-[30px]'
     >
-    Soy Mauro Lizarraga, Software Developer con foco en frontend y experiencia construyendo soluciones en entornos
-    corporativos. Mi base analítica y formación matemática me permiten resolver problemas con criterio lógico,
-    estructura y atención al detalle. En Accenture consolidé experiencia trabajando con estándares enterprise,
-    colaboración multidisciplinaria y entregas orientadas a calidad, mantenibilidad y escalabilidad. Actualmente
-    estoy ampliando ese enfoque hacia un perfil fullstack con .NET 9, C#, APIs RESTful y PostgreSQL para diseñar
-    productos digitales de punta a punta con visión técnica y de negocio.
+      Soy Mauro Lizarraga, Fullstack Developer, Licenciado en Educación y Profesor de Matemática. Mi formación pedagógica y base analítica me otorgan una ventaja competitiva única: la capacidad de traducir problemas lógicos complejos y abstractos en arquitecturas de software claras, predecibles y mantenibles.
+    </motion.p>
+    <motion.p
+    variants={fadeIn("","", 0.15,1)}
+    className='mt-4 text-secondary text-[14px] sm:text-[17px] max-w-3xl leading-[24px] sm:leading-[30px]'
+    >
+      Tras consolidar experiencia en Accenture construyendo interfaces web corporativas bajo estándares de alto rendimiento (Angular, React, Vue), hoy en día diseño soluciones de punta a punta integrando .NET, bases de datos y flujos de Inteligencia Artificial. Actualmente, aplico este perfil híbrido tanto en la docencia de nivel Terciario (donde enseño Álgebra Lineal, Análisis Matemático, Inteligencia Artificial y Ciencia de Datos) como en la digitalización institucional y capacitación de más de 120 educadores, uniendo la psicología del aprendizaje con un diseño de interfaces (UX/UI) fluido y centrado en el usuario.
     </motion.p>
 
     <div className='mt-20 flex flex-wrap justify-center gap-10'>

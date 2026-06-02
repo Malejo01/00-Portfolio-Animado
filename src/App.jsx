@@ -1,10 +1,11 @@
 import { Suspense, lazy, useEffect, useRef, useState } from "react"
 import { BrowserRouter } from "react-router-dom"
-import {About, Hero, Navbar, Tech } from './components'
+import {About, Hero, Navbar, Tech, Experience } from './components'
 
 const Works = lazy(() => import("./components/Works"))
 const Contact = lazy(() => import("./components/Contact"))
 const StarsCanvas = lazy(() => import("./components/canvas/Stars"))
+const Certificates = lazy(() => import("./components/Certificates"))
 
 const DeferredSection = ({ className, minHeight, children }) => {
   const containerRef = useRef(null)
@@ -66,10 +67,16 @@ const App = () => {
         <About />
       </div>
       <div className="bg-primary">
+        <Experience />
+      </div>
+      <div className="bg-primary">
         <Tech />
       </div>
       <DeferredSection className="relative z-10 bg-primary" minHeight="680px">
         <Works />
+      </DeferredSection>
+      <DeferredSection className="relative z-10 bg-primary" minHeight="500px">
+        <Certificates />
       </DeferredSection>
       <DeferredSection className="relative z-0" minHeight="860px">
         <Contact />

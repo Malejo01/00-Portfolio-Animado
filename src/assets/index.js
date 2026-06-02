@@ -24,11 +24,21 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import nextjs from "./tech/nextjs.svg";
+import vuejs from "./tech/vuejs.svg";
+import supabase from "./tech/supabase.svg";
+import prisma from "./tech/prisma.svg";
+import stellar from "./tech/stellar.svg";
+import ai from "./tech/ai.svg";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
+import accenture from "./company/accenture.png";
+import udemy from "./company/udemy.svg";
+import datacamp from "./company/datacamp.svg";
+import coderhouse from "./company/coderhouse.svg";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -65,10 +75,20 @@ export {
   tailwind,
   typescript,
   threejs,
+  nextjs,
+  vuejs,
+  supabase,
+  prisma,
+  stellar,
+  ai,
   meta,
   shopify,
   starbucks,
   tesla,
+  accenture,
+  udemy,
+  datacamp,
+  coderhouse,
   carrent,
   jobit,
   tripguide,

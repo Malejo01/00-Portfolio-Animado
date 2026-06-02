@@ -20,6 +20,16 @@ import {
     starbucks,
     tesla,
     shopify,
+    accenture,
+    nextjs,
+    vuejs,
+    supabase,
+    prisma,
+    stellar,
+    ai,
+    udemy,
+    datacamp,
+    coderhouse,
     carrent,
     jobit,
     tripguide,
@@ -38,8 +48,16 @@ import {
       title: "Acerca de mi",
     },
     {
+      id: "experience",
+      title: "Experiencia",
+    },
+    {
       id: "work",
       title: "Proyectos",
+    },
+    {
+      id: "certificates",
+      title: "Certificados",
     },
     {
       id: "contact",
@@ -126,59 +144,46 @@ import {
       name: "git",
       icon: git,
     },
+    {
+      name: "Next JS",
+      icon: nextjs,
+    },
+    {
+      name: "Vue JS",
+      icon: vuejs,
+    },
+    {
+      name: "Supabase",
+      icon: supabase,
+    },
+    {
+      name: "Prisma ORM",
+      icon: prisma,
+    },
+    {
+      name: "Stellar Network",
+      icon: stellar,
+    },
+    {
+      name: "Inteligencia Artificial",
+      icon: ai,
+    },
   ];
   
   const experiences = [
     {
-      title: "React.js Developer",
-      company_name: "Starbucks",
-      icon: starbucks,
-      iconBg: "#383E56",
-      date: "March 2020 - April 2021",
+      title: "Packaged App Development Analyst",
+      company_name: "Accenture",
+      icon: accenture,
+      iconBg: "#1d1836",
+      date: "Abril 2025 - Febrero 2026",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "React Native Developer",
-      company_name: "Tesla",
-      icon: tesla,
-      iconBg: "#E6DEDD",
-      date: "Jan 2021 - Feb 2022",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "Web Developer",
-      company_name: "Shopify",
-      icon: shopify,
-      iconBg: "#383E56",
-      date: "Jan 2022 - Jan 2023",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "Full stack Developer",
-      company_name: "Meta",
-      icon: meta,
-      iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Desarrollo y mantenimiento de aplicaciones web a nivel empresarial para clientes internacionales utilizando Angular, React y Vue.js.",
+        "Integración de frontend con servicios backend en .NET y APIs REST, optimizando el flujo de datos y el rendimiento del sistema.",
+        "Colaboración en entornos ágiles (Agile/Scrum), trabajando de cerca con Product Owners y Tech Leads para entregar soluciones orientadas al negocio.",
+        "Gestión del ciclo de vida de desarrollo de punta a punta, incluyendo el seguimiento de tareas y el progreso de sprints mediante Azure DevOps.",
+        "Participación en el análisis de despliegues y colaboración con equipos de QA para asegurar que todos los fixes cumplieran con altos estándares de calidad y estabilidad.",
+        "Implementación de componentes de formulario reutilizables en Angular con validación y lógica de filtrado por capas, reduciendo el código duplicado de la interfaz de usuario."
       ],
     },
   ];
@@ -429,4 +434,35 @@ import {
     },
   ];
   
-  export { services, technologies, experiences, testimonials, projects };
+  const certificates = [
+    {
+      title: "SQL Certification",
+      provider: "DataCamp",
+      year: "2026",
+      icon: datacamp,
+      pdf: "/certificates/SQL_DataCamp_2026.pdf",
+    },
+    {
+      title: "Vue JS - Frontend Web Developer",
+      provider: "Udemy",
+      year: "2025",
+      icon: udemy,
+      pdf: "/certificates/VueJS_Udemy_2025.pdf",
+    },
+    {
+      title: "C# and .NET Developer - Backend Web Developer",
+      provider: "Udemy",
+      year: "2025",
+      icon: udemy,
+      pdf: "/certificates/CSharp_NET_Udemy_2025.pdf",
+    },
+    {
+      title: "React JS - Frontend Web Developer",
+      provider: "CoderHouse",
+      year: "2022",
+      icon: coderhouse,
+      pdf: "/certificates/ReactJS_CoderHouse_2022.png",
+    },
+  ];
+  
+  export { services, technologies, experiences, testimonials, projects, certificates };
